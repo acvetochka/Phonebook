@@ -30,9 +30,17 @@ const handleLogOutFulfilled = state => {
   state.isLoggedIn = false;
 };
 
+const handleRefreshPending = state => {
+  state.isRefreshing = true;
+};
+
 const handleRefreshFulfilled = (state, action) => {
   state.user = action.payload;
   state.isLoggedIn = true;
+  state.isRefreshing = false;
+};
+
+const handleRefreshRejected = state => {
   state.isRefreshing = false;
 };
 
@@ -44,9 +52,9 @@ const authSlice = createSlice({
       .addCase(register.fulfilled, handlerAuthFulfilled)
       .addCase(logIn.fulfilled, handlerAuthFulfilled)
       .addCase(logOut.fulfilled, handleLogOutFulfilled)
-      .addCase(refreshUser.pending, state => (state.isRefreshing = true))
+      .addCase(refreshUser.pending, handleRefreshPending)
       .addCase(refreshUser.fulfilled, handleRefreshFulfilled)
-      .addCase(refreshUser.rejected, state => (state.isRefreshing = false)),
+      .addCase(refreshUser.rejected, handleRefreshRejected),
 });
 
 export const authReducer = persistReducer(persistConfig, authSlice.reducer);

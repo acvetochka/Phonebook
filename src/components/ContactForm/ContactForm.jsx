@@ -14,8 +14,6 @@ export function ContactForm() {
     evt.preventDefault();
     const form = evt.target;
     const { name, number } = form.elements;
-    console.log(name.value);
-    console.log(number.value);
 
     const newContact = {
       id: nanoid(),
@@ -29,8 +27,6 @@ export function ContactForm() {
       );
     } else {
       dispatch(addContact(newContact));
-      console.log();
-      //
     }
     form.reset();
   };

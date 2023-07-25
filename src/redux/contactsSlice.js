@@ -23,16 +23,13 @@ const handleFetchContactsFulfilled = (state, action) => {
 const handleAddContactsFulfilled = (state, action) => {
   state.isLoading = false;
   state.contactsItem.unshift(action.payload);
-  console.log(action.payload);
 };
 
 const handleDeleteContactsFulfilled = (state, action) => {
-  console.log(action.payload.id);
   state.isLoading = false;
   const deleteIdx = state.contactsItem.findIndex(
     contact => contact.id === action.payload.id
   );
-  console.log(deleteIdx);
   state.contactsItem.splice(deleteIdx, 1);
 };
 

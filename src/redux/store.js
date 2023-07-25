@@ -13,21 +13,18 @@ import { filterReducer } from './filterSlice';
 import { contactReducer } from './contactsSlice';
 import { authReducer } from './auth/authSlice';
 
-// const persistedReducer = persistReducer(persistConfig, authReducer);
-
 export const store = configureStore({
   reducer: {
     auth: authReducer,
     contacts: contactReducer,
     filter: filterReducer,
   },
-  middleware(getDefaultMiddleware) {
-    return getDefaultMiddleware({
+  middleware: getDefaultMiddleware =>
+    getDefaultMiddleware({
       serializableCheck: {
         ignoredActions: [FLUSH, REHYDRATE, PAUSE, PERSIST, PURGE, REGISTER],
       },
-    });
-  },
+    }),
 });
 
 export const persistor = persistStore(store);
