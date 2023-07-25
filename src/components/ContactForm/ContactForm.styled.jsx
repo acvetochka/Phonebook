@@ -1,14 +1,16 @@
 import styled from '@emotion/styled';
 
 export const Form = styled.form`
+  max-width: 350px;
+  margin: 0 auto;
   border: 1px solid gray;
-  border-radius: 5px;
+  border-radius: 10px;
   padding: 20px;
   display: flex;
   flex-direction: column;
   align-items: center;
-  background: #74a4c2;
   box-shadow: 1px 1px 5px gray;
+  background: linear-gradient(180deg, #b5b5b5, #599caa, #0f596b);
 `;
 
 export const FormLabel = styled.label`
@@ -20,18 +22,19 @@ export const FormLabel = styled.label`
 `;
 
 export const FormInput = styled.input`
-  width: 300px;
+  max-width: 300px;
+  width: 100%;
   height: 30px;
-  border-radius: 4px;
+  border-radius: 8px;
   font-size: 20px;
+  padding: 10px;
 `;
 
 export const FormButton = styled.button`
   margin: 0 auto;
-  /* padding: 10px; */
-  border-radius: 4px;
+  border-radius: 8px;
   padding: 5px 10px;
-  background: #62869d;
+  background: transparent;
   color: white;
   box-shadow: 4px 1px 4px rgba(0, 0, 0, 0.12), 0px 4px 4px rgba(0, 0, 0, 0.06),
     1px 4px 6px rgba(0, 0, 0, 0.16);
@@ -41,6 +44,6 @@ export const FormButton = styled.button`
   :hover,
   :focus {
     cursor: pointer;
-    background: #44728f;
+    background: #145d6f;
   }
 `;

@@ -1,5 +1,6 @@
 import { useDispatch, useSelector } from 'react-redux';
 import { useEffect } from 'react';
+import { BiSolidFace, BiSolidPhone } from 'react-icons/bi';
 
 import { fetchContacts, deleteContact } from 'redux/operations';
 import { getContacts, getFilter } from 'redux/selectors';
@@ -8,6 +9,10 @@ import {
   ContactItem,
   ContactData,
   ButtonDelete,
+  Span,
+  ButtonIcon,
+  Text,
+  DeleteSpan,
 } from './ContactList.styled';
 
 export function ContactList() {
@@ -32,20 +37,30 @@ export function ContactList() {
     <ContactListStyled>
       {isLoading && <p>Loading contacts...</p>}
       {error && <p>{error}</p>}
-      {contactsItem.length > 0 &&
-        visibleContacts.map(({ id, name, phone }) => (
+      {contactsItem.length > 0 ? (
+        visibleContacts.map(({ id, name, number }) => (
           <ContactItem key={id}>
             <ContactData>
-              {name}: <span>{phone}</span>
+              <Span>
+                <BiSolidFace />
+                {name}:{' '}
+              </Span>
+              <Span>
+                <BiSolidPhone />
+                {number}
+              </Span>
             </ContactData>
             <ButtonDelete
               type="button"
               onClick={() => dispatch(deleteContact(id))}
             >
-              Delete
+              <ButtonIcon /> <DeleteSpan>Delete</DeleteSpan>
             </ButtonDelete>
           </ContactItem>
-        ))}
+        ))
+      ) : (
+        <Text>Oops, contact list is empty. Add new contact</Text>
+      )}
     </ContactListStyled>
   );
 }

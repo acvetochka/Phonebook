@@ -1,7 +1,7 @@
 import styled from '@emotion/styled';
 
 export const Container = styled.div`
-  text-align: center;
+  margin-bottom: 20px;
 `;
 
 export const FilterLabel = styled.label`
@@ -9,13 +9,13 @@ export const FilterLabel = styled.label`
   flex-direction: column;
   gap: 10px;
   font-size: 26px;
-  justify-content: center;
   align-items: center;
 `;
 
 export const FilterInput = styled.input`
-  width: 300px;
+  max-width: 300px;
+  width: 100%;
   height: 30px;
   font-size: 24px;
-  border-radius: 4px;
+  border-radius: 8px;
 `;

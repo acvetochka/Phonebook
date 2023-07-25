@@ -1,8 +1,10 @@
-import { Form, FormLabel, FormInput, FormButton } from './ContactForm.styled';
 import { useDispatch, useSelector } from 'react-redux';
+import { nanoid } from '@reduxjs/toolkit';
+import Notiflix from 'notiflix';
+
 import { addContact } from 'redux/operations';
 import { getContacts } from 'redux/selectors';
-import Notiflix from 'notiflix';
+import { Form, FormLabel, FormInput, FormButton } from './ContactForm.styled';
 
 export function ContactForm() {
   const { contactsItem } = useSelector(getContacts);
@@ -12,14 +14,22 @@ export function ContactForm() {
     evt.preventDefault();
     const form = evt.target;
     const { name, number } = form.elements;
+    console.log(name.value);
+    console.log(number.value);
 
+    const newContact = {
+      id: nanoid(),
+      name: name.value,
+      number: number.value,
+    };
     if (contactsItem.some(contact => contact.name === name.value)) {
       Notiflix.Report.warning(
         'Warning',
         `${name.value} is already in contacts.`
       );
     } else {
-      dispatch(addContact({ name: name.value, phone: number.value }));
+      dispatch(addContact(newContact));
+      console.log();
       //
     }
     form.reset();
