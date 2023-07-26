@@ -9,6 +9,7 @@ const initialState = {
   token: null,
   isLoggedIn: false,
   isRefreshing: false,
+  error: null,
 };
 
 const persistConfig = {
@@ -44,13 +45,19 @@ const handleRefreshRejected = state => {
   state.isRefreshing = false;
 };
 
+const handleError = (state, action) => {
+  state.error = action.payload;
+};
+
 const authSlice = createSlice({
   name: 'auth',
   initialState,
   extraReducers: builder =>
     builder
       .addCase(register.fulfilled, handlerAuthFulfilled)
+      .addCase(register.rejected, handleError)
       .addCase(logIn.fulfilled, handlerAuthFulfilled)
+      .addCase(logIn.rejected, handleError)
       .addCase(logOut.fulfilled, handleLogOutFulfilled)
       .addCase(refreshUser.pending, handleRefreshPending)
       .addCase(refreshUser.fulfilled, handleRefreshFulfilled)

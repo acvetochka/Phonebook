@@ -1,10 +1,10 @@
 import { useDispatch, useSelector } from 'react-redux';
 import { nanoid } from '@reduxjs/toolkit';
-import Notiflix from 'notiflix';
 
 import { addContact } from 'redux/operations';
 import { getContacts } from 'redux/selectors';
 import { Form, FormLabel, FormInput, FormButton } from './ContactForm.styled';
+import { getNotification } from 'components/helped/getNotificatin';
 
 export function ContactForm() {
   const { contactsItem } = useSelector(getContacts);
@@ -21,10 +21,7 @@ export function ContactForm() {
       number: number.value,
     };
     if (contactsItem.some(contact => contact.name === name.value)) {
-      Notiflix.Report.warning(
-        'Warning',
-        `${name.value} is already in contacts.`
-      );
+      getNotification(`${name.value} is already in contacts.`);
     } else {
       dispatch(addContact(newContact));
     }
@@ -57,14 +54,3 @@ export function ContactForm() {
     </Form>
   );
 }
-
-Notiflix.Report.init({
-  svgSize: '50px',
-  messageFontSize: '20px',
-  warning: {
-    svgColor: '#44728f',
-
-    buttonBackground: '#44728f',
-    backOverlayColor: 'rgba(0,0, 0,0.2)',
-  },
-});
