@@ -1,8 +1,8 @@
 {
-  "name": "goit-react-hw-08-phonebook",
+  "name": "phonebook",
   "version": "0.1.0",
   "private": true,
-  "homepage": "https://acvetochka.github.io/goit-react-hw-08-phonebook",
+  "homepage": "https://acvetochka.github.io/Phonebook",
   "dependencies": {
     "@emotion/styled": "^11.11.0",
     "@redux-devtools/extension": "^3.2.5",
