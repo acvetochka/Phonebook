@@ -22,12 +22,18 @@
 
 - **Фільтрація за іменем**: Користувачі можуть шукати контакти, фільтруючи їх за іменем.
 
-![Filter](./assets/filter-phonebook.png)
+     <img src="./assets/filter-phonebook.png" width="500">
+<!-- ![Filter](./assets/filter-phonebook.png) -->
 
 - **Адаптивна верстка**: Додаток має адаптивний дизайн, що дозволяє користувачам зручно використовувати його на різних пристроях, включаючи комп'ютери, планшети та смартфони.
 
-![Desktop](./assets/desktop-phonebook.png)
-<img src="./assets/mobile-phonebook.png" width="300">
+  - Desktop
+    
+  ![Desktop](./assets/desktop-phonebook.png)
+
+  - Mobile
+    
+  <img src="./assets/mobile-phonebook.png" width="300">
 <!-- ![Mobile](./assets/mobile-phonebook.png) -->
 
 ## Використані технології
