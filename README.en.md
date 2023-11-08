@@ -1,105 +1,60 @@
-# React homework template
+# Phonebook
 
-This project was created with
-[Create React App](https://github.com/facebook/create-react-app). To get
-acquainted and configure additional features
-[refer to documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+This is the README file for a web application for storing phone contacts.
 
-## Creating a repository by template
+![Home Page of Phonebook](./assets/home-phonebook.png)
 
-Use this GoIT repository as a template for creating a repository
-of your project. To use it just tap the `«Use this template»` button and choose
-`«Create a new repository»` option, as you can see on the image below.
+## Description
 
-![Creating repo from a template step 1](./assets/desktop-phonebook.png)
+The application allows users to conveniently manage their contacts, including adding, deleting, and filtering by name. We also provide responsive design and an authentication system.
 
-The page for creating a new repository will open on the next step. Fill out
-the Name field and make sure the repository is public, then click
-`«Create repository from template»` button.
+## Links
 
-![Creating repo from a template step 2](./assets/template-step-2.png)
+- You can explore the application at: [Phonebook](https://acvetochka.github.io/Phonebook)
 
-You now have a personal project repository, having a repository-template file 
-and folder structure. After that, you can work with it as you would with any 
-other private repository: clone it on your computer, write code, commit, and 
-send it to GitHub.
+## Application Features
 
-## Preparing for coding
+- **Authentication**: Users can authenticate into the system using their email and password.
 
-1. Make sure you have an LTS version of Node.js installed on your computer.
-   [Download and install](https://nodejs.org/en/) if needed.
-2. Install the project's base dependencies with the `npm install` command.
-3. Start development mode by running the `npm start` command.
-4. Go to [http://localhost:3000](http://localhost:3000) in your browser. This
-   page will automatically reload after saving changes to the project files.
+- **Adding Contacts**: Users can add new contacts, including name, phone number, email address, and other details.
 
-## Deploy
+- **Deleting Contacts**: Users can delete contacts that are no longer needed.
 
-The production version of the project will automatically be linted, built, and
-deployed to GitHub Pages, in the `gh-pages` branch, every time the `main` branch
-is updated. For example, after a direct push or an accepted pull request. To do
-this, you need to edit the `homepage` field in the `package.json` file,
-replacing `your_username` and `your_repo_name` with your own, and submit the
-changes to GitHub.
+- **Name Filtering**: Users can search for contacts by filtering them by name.
 
-```json
-"homepage": "https://your_username.github.io/your_repo_name/"
-```
+     <img src="./assets/filter-phonebook.png" width="500">
+<!-- ![Filter](./assets/filter-phonebook.png) -->
 
-Next, you need to go to the settings of the GitHub repository (`Settings` >
-`Pages`) and set the distribution of the production version of files from the
-`/root` folder of the `gh-pages` branch, if this was not done automatically.
+- **Responsive Design**: The application has a responsive design, allowing users to use it conveniently on various devices, including computers, tablets, and smartphones.
 
-![GitHub Pages settings](./assets/repo-settings.png)
+  - Desktop
+    
+  ![Desktop](./assets/desktop-phonebook.png)
 
-### Deployment status
+  - Mobile
+    
+  <img src="./assets/mobile-phonebook.png" width="300">
+<!-- ![Mobile](./assets/mobile-phonebook.png) -->
 
-The deployment status of the latest commit is displayed with an icon next to its
-ID.
+## Used Technologies
 
-- **Yellow color** - the project is being built and deployed.
-- **Green color** - deployment completed successfully.
-- **Red color** - an error occurred during linting, build or deployment.
+  ![HTML5](https://img.shields.io/badge/html5-%23E34F26.svg?style=for-the-badge&logo=html5&logoColor=white)
+  ![JavaScript](https://img.shields.io/badge/javascript-%23323330.svg?style=for-the-badge&logo=javascript&logoColor=%23F7DF1E)
+  ![React](https://img.shields.io/badge/react-%2320232a.svg?style=for-the-badge&logo=react&logoColor=%2361DAFB)
+  ![Redux](https://img.shields.io/badge/redux-%23593d88.svg?style=for-the-badge&logo=redux&logoColor=white)
+  ![Axios](https://img.shields.io/badge/Axios-5A29E4?style=for-the-badge&logo=axios&logoColor=white)
+  ![Rest API](https://img.shields.io/badge/Rest_API-gray?style=for-the-badge)
 
-More detailed information about the status can be viewed by clicking on the
-icon, and in the drop-down window, follow the link `Details`.
+  ![CSS3](https://img.shields.io/badge/CSS3-1572B6?style=for-the-badge&logo=css3&logoColor=white)
+  ![Emotion Styles](https://img.shields.io/badge/Emotion-D26AC2?style=for-the-badge)
 
-![Deployment status](./assets/deploy-status.png)
+ **Utilities**:
 
-### Live page
+   ![Visual Studio Code](https://img.shields.io/badge/Visual%20Studio%20Code-0078d7.svg?style=for-the-badge&logo=visual-studio-code&logoColor=white)
+   ![GitHub](https://img.shields.io/badge/github-%23121011.svg?style=for-the-badge&logo=github&logoColor=white)
+   ![Git](https://img.shields.io/badge/git-%23F05033.svg?style=for-the-badge&logo=git&logoColor=white)
 
-After some time, usually a couple of minutes, the live page can be viewed at the
-address specified in the edited `homepage` property. For example, here is a link
-to a live version for this repository
-[https://goitacademy.github.io/react-homework-template](https://goitacademy.github.io/react-homework-template).
-
-If a blank page opens, make sure there are no errors in the `Console` tab
-related to incorrect paths to the CSS and JS files of the project (**404**). You
-most likely have the wrong value for the `homepage` property in the
-`package.json` file.
-
-### Routing
-
-If your application uses the `react-router-dom` library for routing, you must
-additionally configure the `<BrowserRouter>` component by passing the exact name
-of your repository in the `basename` prop. Slashes at the beginning and end of
-the line are required.
-
-```jsx
-<BrowserRouter basename="/your_repo_name/">
-  <App />
-</BrowserRouter>
-```
-
-## How it works
-
-![How it works](./assets/how-it-works.png)
-
-1. After each push to the `main` branch of the GitHub repository, a special
-   script (GitHub Action) is launched from the `.github/workflows/deploy.yml`
-   file.
-2. All repository files are copied to the server, where the project is
-   initialized and linted and built before deployment.
-3. If all steps are successful, the built production version of the project
-   files is sent to the `gh-pages` branch. Otherwise, the script execution log
-   will indicate what the problem is.
+## About the Author
+This website was created by Alona Kuznetsova
+[Github](https://github.com/acvetochka)
+[LinkedIn](https://www.linkedin.com/in/alona-kuznietsova/)
