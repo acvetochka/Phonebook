@@ -29,11 +29,11 @@ The application allows users to conveniently manage their contacts, including ad
 
   - Desktop
     
-  ![Desktop](./assets/desktop-phonebook.png)
+  ![Desktop](./assets/desktop.png)
 
   - Mobile
     
-  <img src="./assets/mobile-phonebook.png" width="300">
+  <img src="./assets/mobile.png" width="300">
 <!-- ![Mobile](./assets/mobile-phonebook.png) -->
 
 ## Used Technologies

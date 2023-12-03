@@ -31,12 +31,12 @@
 
   - Desktop
     
-  ![Desktop](./assets/desktop-phonebook.png)
+  ![Desktop](./assets/desktop.png)
 
   - Mobile
 
 <div align="center">
-  <img src="./assets/mobile-phonebook.png" width="300">
+  <img src="./assets/mobile.png" width="300">
 </div>
 <!-- ![Mobile](./assets/mobile-phonebook.png) -->
 
