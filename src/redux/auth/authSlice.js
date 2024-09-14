@@ -6,6 +6,7 @@ import { logIn, logOut, refreshUser, register } from './auth-operations';
 
 const initialState = {
   user: { name: null, email: null },
+  // user: {email: null},
   token: null,
   isLoggedIn: false,
   isRefreshing: false,
@@ -15,7 +16,7 @@ const initialState = {
 const persistConfig = {
   key: 'auth',
   storage,
-  whitelist: ['token'],
+  whitelist: ['token', 'user'],
 };
 
 const handlerAuthFulfilled = (state, action) => {
@@ -27,6 +28,7 @@ const handlerAuthFulfilled = (state, action) => {
 
 const handleLogOutFulfilled = state => {
   state.user = { name: null, email: null };
+  // state.user = {  email: null };
   state.token = null;
   state.isLoggedIn = false;
 };

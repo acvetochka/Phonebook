@@ -1,6 +1,6 @@
 import { useDispatch, useSelector } from 'react-redux';
 
-import { register } from 'redux/auth/auth-operations';
+import { logIn, register } from 'redux/auth/auth-operations';
 import { Button, Form, Input, Label } from './RegisterForm.styled';
 import { getError } from 'redux/auth/auth-selectors';
 import { getNotification } from 'components/helped/getNotificatin';
@@ -28,6 +28,12 @@ export const RegisterForm = () => {
         password: password.value,
       })
     );
+    dispatch(
+      logIn({
+        email: email.value,
+        password: password.value
+      })
+    )
     form.reset();
   };
 

@@ -28,7 +28,7 @@ const handleAddContactsFulfilled = (state, action) => {
 const handleDeleteContactsFulfilled = (state, action) => {
   state.isLoading = false;
   const deleteIdx = state.contactsItem.findIndex(
-    contact => contact.id === action.payload.id
+    contact => contact._id === action.payload._id
   );
   state.contactsItem.splice(deleteIdx, 1);
 };

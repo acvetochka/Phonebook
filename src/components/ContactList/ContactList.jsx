@@ -38,8 +38,8 @@ export function ContactList() {
       {isLoading && <p>Loading contacts...</p>}
       {error && <p>{error}</p>}
       {contactsItem.length > 0 ? (
-        visibleContacts.map(({ id, name, number }) => (
-          <ContactItem key={id}>
+        visibleContacts.map(({ _id, name, phone}) => (
+          <ContactItem key={_id}>
             <ContactData>
               <Span>
                 <BiSolidFace />
@@ -47,12 +47,12 @@ export function ContactList() {
               </Span>
               <Span>
                 <BiSolidPhone />
-                {number}
+                {phone}
               </Span>
             </ContactData>
             <ButtonDelete
               type="button"
-              onClick={() => dispatch(deleteContact(id))}
+              onClick={() => dispatch(deleteContact(_id))}
             >
               <ButtonIcon /> <DeleteSpan>Delete</DeleteSpan>
             </ButtonDelete>

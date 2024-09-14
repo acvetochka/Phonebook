@@ -1,5 +1,5 @@
 import { useDispatch, useSelector } from 'react-redux';
-import { nanoid } from '@reduxjs/toolkit';
+// import { nanoid } from '@reduxjs/toolkit';
 
 import { addContact } from 'redux/operations';
 import { getContacts } from 'redux/selectors';
@@ -15,15 +15,20 @@ export function ContactForm() {
     const form = evt.target;
     const { name, number } = form.elements;
 
+
     const newContact = {
-      id: nanoid(),
+      // id: nanoid(),
       name: name.value,
-      number: number.value,
+      phone: number.value,
     };
+    console.log(newContact);
+    
     if (contactsItem.some(contact => contact.name === name.value)) {
       getNotification(`${name.value} is already in contacts.`);
     } else {
       dispatch(addContact(newContact));
+      console.log(contactsItem);
+      
     }
     form.reset();
   };
