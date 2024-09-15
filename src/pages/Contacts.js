@@ -13,8 +13,8 @@ const Contacts = () => {
       <Section title={'Add new contact'}>
         <ContactForm />
       </Section>
-      {isLoading && !error && <b>Request in progress...</b>}
       <Section title={'My contacts'}>
+      {isLoading && !error && <b>Request in progress...</b>}
         <Filter />
         <ContactList />
       </Section>

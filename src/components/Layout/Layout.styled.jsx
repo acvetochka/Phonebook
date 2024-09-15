@@ -8,4 +8,8 @@ export const Main = styled.main`
   padding: 0 15px;
   padding-top: 80px;
   margin: 0 auto;
+
+  & > section {
+  width: 50%;
+  }
 `;

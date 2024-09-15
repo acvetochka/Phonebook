@@ -29,8 +29,8 @@ export function ContactForm() {
       dispatch(addContact(newContact));
       console.log(contactsItem);
       
+      form.reset();
     }
-    form.reset();
   };
 
   return (

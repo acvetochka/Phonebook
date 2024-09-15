@@ -11,6 +11,8 @@ export const AppBar = () => {
   const isLoggedIn = useSelector(getIsLoggedIn);
   const dispatch = useDispatch();
   const user = useSelector(getUser);
+  console.log(user);
+  
 
   return (
     <Header>
@@ -19,7 +21,7 @@ export const AppBar = () => {
         <UserMenu>
           <User>
             <BiSolidUserCircle />
-            {user.name}
+            {user.name || user.email}
           </User>
           <Button type="button" onClick={() => dispatch(logOut())}>
             <BiSolidDoorOpen />
