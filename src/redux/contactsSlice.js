@@ -25,12 +25,18 @@ const handleAddContactsFulfilled = (state, action) => {
   state.contactsItem.unshift(action.payload);
 };
 
+
 const handleDeleteContactsFulfilled = (state, action) => {
   state.isLoading = false;
+  state.error = null;
+
   const deleteIdx = state.contactsItem.findIndex(
-    contact => contact._id === action.payload._id
+    contact => contact._id === action.payload 
   );
-  state.contactsItem.splice(deleteIdx, 1);
+
+  if (deleteIdx !== -1) {
+    state.contactsItem.splice(deleteIdx, 1); 
+  }
 };
 
 export const contactsSlice = createSlice({
