@@ -2,7 +2,8 @@ import axios from 'axios';
 import { createAsyncThunk } from '@reduxjs/toolkit';
 
 // axios.defaults.baseURL = 'https://connections-api.herokuapp.com';
-axios.defaults.baseURL = 'https://contacts-api-fkik.onrender.com/api/'
+// axios.defaults.baseURL = 'https://contacts-api-fkik.onrender.com/api/'
+axios.defaults.baseURL = "http://178.62.208.241:3000/api/"
 const token = {
   set(token) {
     axios.defaults.headers.common.Authorization = `Bearer ${token}`;
