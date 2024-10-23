@@ -14,11 +14,12 @@ import {
   Text,
   DeleteSpan,
 } from './ContactList.styled';
+// import { Loader } from 'components/Loader/Loader';
 
 export function ContactList() {
   const filter = useSelector(getFilter);
   const dispatch = useDispatch();
-  const { contactsItem, isLoading, error } = useSelector(getContacts);
+  const { contactsItem,  error } = useSelector(getContacts);
 
   useEffect(() => {
     dispatch(fetchContacts());
@@ -35,7 +36,7 @@ export function ContactList() {
 
   return (
     <ContactListStyled>
-      {isLoading && <p>Loading contacts...</p>}
+      {/* {isLoading && <Loader size="40"/>} */}
       {error && <p>{error}</p>}
       {contactsItem.length > 0 ? (
         visibleContacts.map(({ _id, name, phone}) => (

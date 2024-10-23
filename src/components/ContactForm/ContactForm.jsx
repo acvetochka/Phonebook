@@ -21,13 +21,13 @@ export function ContactForm() {
       name: name.value,
       phone: number.value,
     };
-    console.log(newContact);
+    // console.log(newContact);
     
     if (contactsItem.some(contact => contact.name === name.value)) {
       getNotification(`${name.value} is already in contacts.`);
     } else {
       dispatch(addContact(newContact));
-      console.log(contactsItem);
+      // console.log(contactsItem);
       
       form.reset();
     }

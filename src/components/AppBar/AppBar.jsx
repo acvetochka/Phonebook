@@ -11,7 +11,6 @@ export const AppBar = () => {
   const isLoggedIn = useSelector(getIsLoggedIn);
   const dispatch = useDispatch();
   const user = useSelector(getUser);
-  console.log(user);
   
 
   return (
