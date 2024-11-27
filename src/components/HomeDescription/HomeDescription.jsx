@@ -1,7 +1,7 @@
 import { useSelector } from 'react-redux';
 
 import { getIsLoggedIn } from 'redux/auth/auth-selectors';
-import phone from '../../images/phone.jpg';
+import heroImage from "../../images/fon.webp";
 import { Section } from 'components/Section/Section';
 import { AuthNav } from 'components/AuthNavigation/AuthNavigation.styled';
 import {
@@ -15,7 +15,7 @@ export const HomeDescription = () => {
   const isLoggedIn = useSelector(getIsLoggedIn);
   return (
     <HomeContainer>
-      <Img src={phone} alt="phone" width="200" height="300" />
+      <Img src={heroImage} alt="phone with contacts" width="300" height="300" />
       <HomeTextContainer>
         <Section title={'Welcome to Phonebook'}>
           <p>
