@@ -1,0 +1,16 @@
+[
+    {
+        "name": "name",
+        "type": "text",
+        "pattern": "^[a-zA-Zа-яА-Я\\s]+$",
+        "title": "Name may contain only letters, apostrophe, dash and spaces. For example Adrian, Jacob Mercer, Charles de Batz de Castelmore d'Artagnan",
+        "isRequired": true
+    },
+    {
+        "name": "number",
+        "type": "tel",
+        "pattern": "\\+?[0-9\\s\\-\\(\\)]+",
+        "title": "Phone number must be digits and can contain spaces, dashes, parentheses and can start with +",
+        "isRequired": true
+    }
+]

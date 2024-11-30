@@ -13,22 +13,11 @@ export const Form = styled.form`
   background: linear-gradient(180deg, #b5b5b5, #599caa, #0f596b);
 `;
 
-export const FormLabel = styled.label`
-  font-size: 28px;
-  display: flex;
-  flex-direction: column;
-  margin-bottom: 15px;
-  gap: 5px;
-`;
-
-export const FormInput = styled.input`
-  max-width: 300px;
-  width: 100%;
-  height: 30px;
-  border-radius: 8px;
-  font-size: 20px;
-  padding: 10px;
-`;
+export const InputWrapper = styled.div`
+display: flex;
+flex-direction: column;
+gap: 10px;
+`
 
 export const FormButton = styled.button`
   margin: 0 auto;
