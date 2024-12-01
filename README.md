@@ -11,7 +11,7 @@
 ## Посилання
 
 - З додатком можна ознайомитись за посиланням:  [Phonebook](https://acvetochka.github.io/Phonebook)
-- Використовується [Backend](https://github.com/acvetochka/nodejs-rest-api
+- Використовується [Backend](https://github.com/acvetochka/nodejs-rest-api)
 
 ## Функціональність додатку
 
