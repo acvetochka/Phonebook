@@ -1,9 +1,10 @@
 import { useDispatch, useSelector } from 'react-redux';
 
 import { logIn, register } from 'redux/auth/auth-operations';
-import { Button, Form, Input, Label } from './RegisterForm.styled';
+import { Button, Form } from './RegisterForm.styled';
 import { getError } from 'redux/auth/auth-selectors';
 import { getNotification } from 'components/helped/getNotificatin';
+import { AuthInput } from 'components/AuthInput/AuthInput';
 
 export const RegisterForm = () => {
   const dispatch = useDispatch();
@@ -31,27 +32,18 @@ export const RegisterForm = () => {
     dispatch(
       logIn({
         email: email.value,
-        password: password.value
+        password: password.value,
       })
-    )
+    );
     form.reset();
   };
 
   return (
     <div>
       <Form onSubmit={handleSubmit}>
-        <Label>
-          Name
-          <Input type="text" name="name" min="6" />
-        </Label>
-        <Label>
-          E-mail
-          <Input type="text" name="email" />
-        </Label>
-        <Label>
-          Password
-          <Input type="password" name="password" />
-        </Label>
+        <AuthInput label="Name" name="name" type="text" />
+        <AuthInput label="Email" name="email" type="email" />
+        <AuthInput label="Password" name="password" type="password" />
         <Button type="submit">Sign up</Button>
       </Form>
       {error?.response?.data?.name &&
