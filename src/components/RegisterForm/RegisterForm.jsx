@@ -6,6 +6,8 @@ import { getError } from 'redux/auth/auth-selectors';
 import { getNotification } from 'components/helped/getNotificatin';
 import { AuthInput } from 'components/AuthInput/AuthInput';
 
+import registerData from 'data/registerData.json';
+
 export const RegisterForm = () => {
   const dispatch = useDispatch();
   const error = useSelector(getError);
@@ -41,9 +43,9 @@ export const RegisterForm = () => {
   return (
     <div>
       <Form onSubmit={handleSubmit}>
-        <AuthInput label="Name" name="name" type="text" />
-        <AuthInput label="Email" name="email" type="email" />
-        <AuthInput label="Password" name="password" type="password" />
+        {registerData.map(({ name, type, label }, idx) => (
+          <AuthInput key={idx} label={label} name={name} type={type} />
+        ))}
         <Button type="submit">Sign up</Button>
       </Form>
       {error?.response?.data?.name &&
