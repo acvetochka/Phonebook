@@ -1,36 +1,44 @@
-import { useState } from 'react';
 import { useDispatch } from 'react-redux';
 
 import { logIn } from 'redux/auth/auth-operations';
-import { Button, Form, Input, Label } from './LoginForm.styled';
+import { Button, Form, } from './LoginForm.styled';
+import { AuthInput } from 'components/AuthInput/AuthInput';
 
 export const LoginForm = () => {
   const dispatch = useDispatch();
-  const [email, setEmail] = useState('');
-  const [password, setPassword] = useState('');
+  // const [email, setEmail] = useState('');
+  // const [password, setPassword] = useState('');
 
-  const handleChange = ({ target: { name, value } }) => {
-    switch (name) {
-      case 'email':
-        return setEmail(value);
-      case 'password':
-        return setPassword(value);
-      default:
-        return;
-    }
-  };
+  // const handleChange = ({ target: { name, value } }) => {
+  //   switch (name) {
+  //     case 'email':
+  //       return setEmail(value);
+  //     case 'password':
+  //       return setPassword(value);
+  //     default:
+  //       return;
+  //   }
+  // };
 
   const handleSubmit = evt => {
     evt.preventDefault();
-    dispatch(logIn({ email, password }));
-    setEmail('');
-    setPassword('');
+    const form = evt.currentTarget;
+    const { email, password } = form.elements;
+    dispatch(logIn({ email: email.value, password: password.value }));
+    // setEmail('');
+    // setPassword('');
   };
 
   return (
     <div>
       <Form onSubmit={handleSubmit}>
-        <Label>
+        <AuthInput name="email" type="email" label="Email"
+        //  value={email}
+         />
+        <AuthInput name="password" type="password" label="Password" 
+        // value={password}
+        />
+        {/* <Label>
           E-mail
           <Input
             type="text"
@@ -38,8 +46,8 @@ export const LoginForm = () => {
             value={email}
             onChange={handleChange}
           />
-        </Label>
-        <Label>
+        </Label> */}
+        {/* <Label>
           Password
           <Input
             type="password"
@@ -47,7 +55,7 @@ export const LoginForm = () => {
             value={password}
             onChange={handleChange}
           />
-        </Label>
+        </Label> */}
         <Button type="submit">Sign in</Button>
       </Form>
     </div>
