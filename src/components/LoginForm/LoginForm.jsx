@@ -1,11 +1,14 @@
-import { useDispatch } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 
 import { logIn } from 'redux/auth/auth-operations';
 import { Button, Form, } from './LoginForm.styled';
 import { AuthInput } from 'components/AuthInput/AuthInput';
+import { getError } from 'redux/auth/auth-selectors';
+import { getNotification } from 'helped/getNotificatin';
 
 export const LoginForm = () => {
   const dispatch = useDispatch();
+  const error = useSelector(getError);
   // const [email, setEmail] = useState('');
   // const [password, setPassword] = useState('');
 
@@ -24,7 +27,9 @@ export const LoginForm = () => {
     evt.preventDefault();
     const form = evt.currentTarget;
     const { email, password } = form.elements;
-    dispatch(logIn({ email: email.value, password: password.value }));
+    const response = dispatch(logIn({ email: email.value, password: password.value }));
+    console.log(response)
+    console.log(error?.response?.data)
     // setEmail('');
     // setPassword('');
   };
@@ -58,6 +63,8 @@ export const LoginForm = () => {
         </Label> */}
         <Button type="submit">Sign in</Button>
       </Form>
+      {error?.response?.data?.message &&
+        getNotification("Щось пішло не так. Спробуй ще!")}
     </div>
   );
 };

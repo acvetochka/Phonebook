@@ -8,7 +8,7 @@ import {
   FormButton,
   InputWrapper,
 } from './ContactForm.styled';
-import { getNotification } from 'components/helped/getNotificatin';
+import { getNotification } from 'helped/getNotificatin';
 import inputsData from '../../data/inputsData.json';
 import { Input } from 'components/Input/Input';
 
