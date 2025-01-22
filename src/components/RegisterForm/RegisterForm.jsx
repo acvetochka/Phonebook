@@ -3,7 +3,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import { logIn, register } from 'redux/auth/auth-operations';
 import { Button, Form } from './RegisterForm.styled';
 import { getError } from 'redux/auth/auth-selectors';
-import { getNotification } from 'components/helped/getNotificatin';
+import { getNotification } from 'helped/getNotificatin';
 import { AuthInput } from 'components/AuthInput/AuthInput';
 
 import registerData from 'data/registerData.json';
@@ -17,9 +17,9 @@ export const RegisterForm = () => {
     const form = e.currentTarget;
     const { name, email, password } = form.elements;
 
-    if (password.value.length < 7) {
+    if (password.value.length < 8) {
       getNotification(
-        `The password must be composed of at least 7 characters.`
+        `The password must be composed of at least 8 characters.`
       );
       return;
     }
@@ -48,7 +48,7 @@ export const RegisterForm = () => {
         ))}
         <Button type="submit">Sign up</Button>
       </Form>
-      {error?.response?.data?.name &&
+      {error?.response?.data?.message &&
         getNotification('This email is already registered')}
     </div>
   );
