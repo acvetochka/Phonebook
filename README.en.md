@@ -11,6 +11,8 @@ The application allows users to conveniently manage their contacts, including ad
 ## Links
 
 - You can explore the application at: [Phonebook](https://acvetochka.github.io/Phonebook)
+- [Backend](https://github.com/acvetochka/nodejs-rest-api) with NodeJS
+- [Документація Backend](https://kuznietsova.org/api-docs/)
 
 ## Application Features
 
