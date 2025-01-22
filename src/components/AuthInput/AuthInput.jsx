@@ -27,7 +27,7 @@ export const AuthInput = ({ label, name, type}) => {
         onChange={handleOnChange}
         value={inputValue}
       />
-      <Label htmlFor="password" isFocused={isFocused} hasValue={inputValue}>
+      <Label htmlFor={name} isFocused={isFocused} hasValue={inputValue}>
         {label}
       </Label>
       {name === 'password' && inputValue && (
