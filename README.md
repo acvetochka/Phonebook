@@ -11,8 +11,8 @@
 ## Посилання
 
 - З додатком можна ознайомитись за посиланням:  [Phonebook](https://acvetochka.github.io/Phonebook)
-- Використовується власний [Backend](https://github.com/acvetochka/nodejs-rest-api) на NodeJS
-- [Документація Backend](https://kuznietsova.org/api-docs/)
+- Використовується власний [Backend](https://github.com/acvetochka/contacts-api) на NodeJS
+- [Документація Backend](https://api.kuznietsova.org/api-docs/)
 
 ## Функціональність додатку
 
