@@ -3,7 +3,7 @@ import { createAsyncThunk } from '@reduxjs/toolkit';
 
 // axios.defaults.baseURL = 'https://connections-api.herokuapp.com';
 // axios.defaults.baseURL = 'https://contacts-api-fkik.onrender.com/api/'
-axios.defaults.baseURL = "https://kuznietsova.org/api/"
+axios.defaults.baseURL = "https://api.kuznietsova.org/"
 const token = {
   set(token) {
     axios.defaults.headers.common.Authorization = `Bearer ${token}`;
